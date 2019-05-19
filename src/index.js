@@ -13,7 +13,6 @@ app.get('/', (req, res) => {
   res.send('Backend is OK!');
 });
 
-require('./src/controllers/authController')(app);
-require('./src/controllers/projectController')(app);
+require('./app/controllers/index')(app);
 
 app.listen(PORT, HOST);
