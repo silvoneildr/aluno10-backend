@@ -4,6 +4,8 @@ const jwt = require('jsonwebtoken');
 const authConfig = require('../../config/auth.json');
 const crypto = require('crypto');
 
+const mailer = require('../../modules/mailer');
+
 const User = require('../models/user.js');
 
 function generateToken(params = {}) {
@@ -66,13 +68,24 @@ router.post('/forgot_password', async (req, res) => {
     await User.findByIdAndUpdate(user.id, {
       '$set': {
         passwordResetToken: token,
-        passwordResetExpires: now
+        passwordResetExpires: now,
       }
-    })
+    });
 
-    console.log(token, now)
+    mailer.sendMail({
+      to: email,
+      from: 'silvoneildr@gmail.com',
+      template: 'auth/forgot_password',
+      context: token
+    }, (err) => {
+      console.log('err', err)
+      if (err) return res.status(400).send({ error: 'Can not send forgot password email' });
+
+      return res.send();
+    });
 
   } catch (error) {
+    console.log(error)
     return res.status(400).send({ error: 'Error, trye again' });
   }
 })

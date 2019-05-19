@@ -8,9 +8,15 @@ const transport = nodemailer.createTransport({
 });
 
 transport.use('compile', hbs({
-  viewEngine: 'handlebars',
-  viewPath: path.resolve('./src/resources/mail/'),
-  extName: '.html',
+  // viewEngine: 'handlebars',
+  viewEngine: {
+    extName: '.hbs',
+    layoutsDir: path.resolve('./src/resources/mail/auth'),
+    partialsDir: path.resolve('./src/resources/mail/auth'),
+    defaultLayout: '',
+  },
+  viewPath: path.resolve('./src/resources/mail/auth'),
+  extName: '.hbs',
 }))
 
 module.exports = transport;
