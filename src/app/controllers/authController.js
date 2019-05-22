@@ -17,11 +17,8 @@ function generateToken(params = {}) {
 const router = express.Router();
 
 router.post('/register', async (req, res) => {
-  const { email, name, id } = req.body;
+  const { email, name } = req.body;
   try {
-    if (await User.findOne({ id }))
-      return res.status(400).send({ error: 'Id already exists!' });
-
     if (await User.findOne({ name }))
       return res.status(400).send({ error: 'Name already exists!' });
 
