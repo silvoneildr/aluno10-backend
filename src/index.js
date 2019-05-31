@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
   // res.send('Backend is OK!');
-  res.send(
+  res.send([
     {
       id: 1,
       name: 'Json Jhones Melborn',
@@ -66,7 +66,7 @@ app.get('/', (req, res) => {
       documentId: '123',
       active: false
     }
-  );
+  ]);
 });
 
 require('./app/controllers/index')(app);
