@@ -15,4 +15,4 @@ app.get('/', (req, res) => {
 
 require('./app/controllers/index')(app);
 
-app.listen(PORT, HOST);
+app.listen(process.env.PORT, HOST);
