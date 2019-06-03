@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const allowCors = require('./config/cors')
+const path = require('path');
 
 // const PORT = 3000;
 // const HOST = '0.0.0.0';
@@ -15,7 +16,7 @@ app.use('/static', express.static(__dirname + '/public'));
 app.get('/', (req, res) => {
   // res.send('Backend is OK!');
   // res.render('index');
-  res.sendFile(path.join(__dirname+'/public/index.html'));
+  res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 require('./app/controllers/index')(app);
