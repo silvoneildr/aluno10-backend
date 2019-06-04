@@ -14,11 +14,11 @@ app.use(allowCors);
 app.use('/', express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-  // res.send('Backend is OK!');
-  // res.render('index');
   res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 require('./app/controllers/index')(app);
 
 app.listen(process.env.PORT);
+
+console.log('Backend is OK');
