@@ -23,4 +23,4 @@ require('./app/controllers/index')(app);
 
 app.listen(PORT, HOST);
 
-console.log('Backend is OK');
+console.log('Backend is running!');
