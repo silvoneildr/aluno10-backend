@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
+const config = require('./config.js');
 
 mongoose.set('useFindAndModify', false);
-// mongodb://<dbuser>:<dbpassword>@ds041821.mlab.com:41821/aluno10db
-// mongodb://localhost/aluno10db
 
-mongoose.connect(`mongodb://${process.env.DB_URL}:27017/aluno10`, {
+const connectionString = 'mongodb://' + global.gConfig.db_username + ":" + global.gConfig.db_password + "@" +global.gConfig.db_url + ":" + global.gConfig.db_port + "/" + global.gConfig.db_name;
+
+console.log(connectionString);
+
+mongoose.connect(connectionString, {
   useNewUrlParser: true,
   useCreateIndex: true
 });
