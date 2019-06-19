@@ -14,7 +14,10 @@ app.use(allowCors);
 app.use('/', express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname + '/public/index.html'));
+    res.status(200).send({
+        title: "Node Express API",
+        version: "0.0.1"
+    });
 });
 
 require('./app/controllers/index')(app);
