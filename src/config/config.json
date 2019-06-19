@@ -6,17 +6,17 @@
         "database_name": "aluno10db",
         "db_url": "ds041821.mlab.com",
 	"db_port": "41821",
-        "db_username": "silvoneildr"
+        "db_username": "silvoneildr",
 	"db_password": "12345db"
     },
     "production": {
         "config_id": "production",
-        "node_host" "0.0.0.0",
+        "node_host": "0.0.0.0",
         "node_port": 3000,
         "database_name": "backend-mongo-db",
         "db_url": "ds041821.mlab.com",
         "db_port": "41821",
-        "db_username": "silvoneildr"
+        "db_username": "silvoneildr",
         "db_password": "12345db"
     }
 }
