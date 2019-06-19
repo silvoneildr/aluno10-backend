@@ -4,7 +4,7 @@ mongoose.set('useFindAndModify', false);
 // mongodb://<dbuser>:<dbpassword>@ds041821.mlab.com:41821/aluno10db
 // mongodb://localhost/aluno10db
 
-mongoose.connect('mongodb://silvoneildr:12345db@ds041821.mlab.com:41821/aluno10db', {
+mongoose.connect(`mongodb://${process.env.DB_URL}:27017/aluno10`, {
   useNewUrlParser: true,
   useCreateIndex: true
 });

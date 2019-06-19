@@ -1,6 +1,6 @@
 FROM node:alpine
 
-WORKDIR /opt/alunos10-backend
+WORKDIR /usr/app
 
 COPY package*.json ./
 
