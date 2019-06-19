@@ -3,8 +3,8 @@ const bodyParser = require('body-parser');
 const allowCors = require('./config/cors')
 const path = require('path');
 
-// const PORT = 3000;
-// const HOST = '0.0.0.0';
+const PORT = 3000;
+const HOST = '0.0.0.0';
 
 const app = express();
 
@@ -19,6 +19,6 @@ app.get('/', (req, res) => {
 
 require('./app/controllers/index')(app);
 
-app.listen(process.env.PORT);
+app.listen(PORT,HOST);
 
 console.log('Backend is OK');

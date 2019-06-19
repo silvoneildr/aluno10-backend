@@ -1,8 +1,9 @@
 FROM node:alpine
 
-WORKDIR /usr/app
+WORKDIR /opt/alunos10-backend
 
 COPY package*.json ./
+
 RUN npm install
 
 COPY . .
