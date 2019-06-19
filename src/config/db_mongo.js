@@ -12,5 +12,3 @@ mongoose.connect(`mongodb://${process.env.DB_URL}:27017/aluno10`, {
 mongoose.Promise = global.Promise;
 
 module.exports = mongoose;
-
-

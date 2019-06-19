@@ -1,4 +1,4 @@
-const mongoose = require('../../database');
+const mongoose = require('../../config/db_mongo.js');
 
 const StudentSchema = new mongoose.Schema({
   name: {
